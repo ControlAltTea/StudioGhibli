@@ -1,0 +1,42 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Clear fix hack */
+.clearfix::after {
+    content: ". ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* *************************** */
+/* BASE STYLE */
+/* *************************** */
+
+body {
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    /* background-image: url('/assets/images/brewery-cover.avif'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+
+/* ************************** */
+/* ADDITIONAL STYLING */
+/* ************************** */
