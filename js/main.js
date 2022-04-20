@@ -1,28 +1,41 @@
 console.log("connected to js")
 
-const MOVIE_SELECT = document.querySelector('#movieList');
-
+// OUTER FUNCTION VARIABLES
+const MOVIE_NAME_SELECT = document.querySelector('#movieList');
+console.log(MOVIE_NAME_SELECT)
 const BASE_URL = new URL("https://ghibliapi.herokuapp.com");
 
-MOVIE_SELECT.addEventListener("change", fetchMovie);
+let movieTitle = document.querySelector('#movieTitle').value;
+let releaseDate = document.querySelector('#releaseDate').value;
+let movieBanner = document.querySelector('#movieBanner').value;
+let description = document.querySelector('#description').value;
 
-function fetchMovie(m) {
-    const movie = MOVIE_SELECT.value;
 
+fetchMovie();
+
+MOVIE_NAME_SELECT.addEventListener("change", fetchMovie);
+
+function fetchMovie() {
     const url = new URL(`/films`, BASE_URL);
 
     fetch(url)
         .then(resp => resp.json())
         .then(data => {
-            data.title.forEach(title => {
-                let option = document.createElement("li");
-                document.querySelector('#movieTitle').innerText = data.title;
-                document.querySelector('#releaseDate').innerText = data.release_date;
-                document.querySelector('#directorTitle').innerText = data.director;
-                document.querySelector('img').src = data[0].movie_banner;
-                document.querySelector('#description').innerText = data.description
+            Object.keys(data).forEach(movieObj => {
+                // console.log(MOVIE, data[movieObj]);
+                let option = document.createElement("option");
+                option.value = data[movieObj].title;
+                option.text = data[movieObj].title;
+                MOVIE_NAME_SELECT.appendChild(option);
+                // console.log("option is", option);
+                // console.log("Movie select is", MOVIE_NAME_SELECT);
             })
         })
+        .catch(err => console.error(err));
+}
+
+function fetchMovieInfo(){
+
 }
 
 
