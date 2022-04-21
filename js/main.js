@@ -4,19 +4,18 @@ console.log("connected to js")
 const MOVIE_NAME_SELECT = document.querySelector('#movieList');
 console.log(MOVIE_NAME_SELECT)
 const BASE_URL = new URL("https://ghibliapi.herokuapp.com");
+let url = new URL(`/films`, BASE_URL);
 
 let movieTitle = document.querySelector('#movieTitle').value;
 let releaseDate = document.querySelector('#releaseDate').value;
 let movieBanner = document.querySelector('#movieBanner').value;
 let description = document.querySelector('#description').value;
 
+fetchMovies();
 
-fetchMovie();
+MOVIE_NAME_SELECT.addEventListener("change", fetchMovieInfo);
 
-MOVIE_NAME_SELECT.addEventListener("change", fetchMovie);
-
-function fetchMovie() {
-    const url = new URL(`/films`, BASE_URL);
+function fetchMovies() {
 
     fetch(url)
         .then(resp => resp.json())
@@ -31,11 +30,20 @@ function fetchMovie() {
                 // console.log("Movie select is", MOVIE_NAME_SELECT);
             })
         })
-        .catch(err => console.error(err));
+        // .catch(err => console.error(err));
 }
 
 function fetchMovieInfo(){
 
+    fetch(url)
+        .then(resp => resp.json())
+        .then(data => {
+            Object.keys(data).forEach(movieObj => {
+                movieIDs = data.map(el => el.id);
+                url = new URL(`/${movieIDs[movieObj].id}`, BASE_URL);
+                movieTitle = data[movieObj].title;
+        })
+    }) 
 }
 
 
