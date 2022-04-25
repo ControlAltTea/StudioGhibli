@@ -29,13 +29,33 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
     /* background-image: url('/assets/images/brewery-cover.avif'); */
+    background: linear-gradient(hsla(190, 90%, 75%, 0.955), hsla(190, 90%, 35%, 0.955));
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
+h1 {
+    font-size: 48px;
+}
 
+#movieInfo {
+    display: block;
+    flex-wrap: wrap;
+}
 
+#imgAndDesc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+img,
+#description {
+    width: 50%;
+    padding: 10px;
+    color: hsla(360, 2%, 96%, 1);
+}
 
 /* ************************** */
 /* ADDITIONAL STYLING */

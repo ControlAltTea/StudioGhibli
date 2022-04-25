@@ -8,21 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Ghibli Generator</h2>
-    <section>
-        <div>
-            <select name="movieList" id="movieList">
-                
-            </select>
-        </div>
+    <section id="sectionBG">
+        <h1>Ghibli Generator</h1>
+        <section>
+            <div>
+                <select name="movieList" id="movieList">
+        
+                </select>
+            </div>
+        
+            <div id="movieInfo" hidden>
+                <h1 id="movieTitle">Movie Title</h2>
+                    <h2>Released in<span id="releaseDate">####</span></h2>
+                    <h2>Directed by <span id="directorTitle">Director</span></h2>
+                    <div id="imgAndDesc">
+                        <img id="movieBanner" src="" alt="">
+                        <p id="description"></p>
+                    </div>
+            </div>
+            <div id="characterSection" hidden>
+                <ul id="charactersList">
 
-        <div id="movieInfo" hidden>
-            <h1 id="movieTitle">Movie Title</h2>
-            <h2>Released <span id="releaseDate">####</span></h2>
-            <h2>Directed by <span id="directorTitle">Director</span></h2>
-            <img id="movieBanner" src="" alt="">
-            <p id="description"></p>
-        </div>
+                </ul>
+            </div>
+        </section>
     </section>
     <script src="/js/main.js"></script>
 </body>
