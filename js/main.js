@@ -2,48 +2,55 @@ console.log("connected to js")
 
 // OUTER FUNCTION VARIABLES
 const MOVIE_NAME_SELECT = document.querySelector('#movieList');
-console.log(MOVIE_NAME_SELECT)
+const MOVIE_INFO = document.querySelector('#movieInfo')
+// console.log(MOVIE_NAME_SELECT)
 const BASE_URL = new URL("https://ghibliapi.herokuapp.com");
 let url = new URL(`/films`, BASE_URL);
-
-let movieTitle = document.querySelector('#movieTitle').value;
-let releaseDate = document.querySelector('#releaseDate').value;
-let movieBanner = document.querySelector('#movieBanner').value;
-let description = document.querySelector('#description').value;
 
 fetchMovies();
 
 MOVIE_NAME_SELECT.addEventListener("change", fetchMovieInfo);
 
+// Creates a dropdown menu of listed movies in the Studio Ghibli API
 function fetchMovies() {
-
+    // using the url from above,
     fetch(url)
         .then(resp => resp.json())
+        // data will loop through each movie title as store it to an "option element"
         .then(data => {
             Object.keys(data).forEach(movieObj => {
                 // console.log(MOVIE, data[movieObj]);
                 let option = document.createElement("option");
+                // option will retain the movie ID value
+                // as well as the text inside
                 option.value = data[movieObj].title;
+                // this will directly add text to the list as it builds
                 option.text = data[movieObj].title;
                 MOVIE_NAME_SELECT.appendChild(option);
-                // console.log("option is", option);
-                // console.log("Movie select is", MOVIE_NAME_SELECT);
             })
         })
         // .catch(err => console.error(err));
 }
 
-function fetchMovieInfo(){
+// each time a new option from the select menu is chosen, a "change"
+// will be registered and the fetchMovieInfo will run
+function fetchMovieInfo(e){
+    
+    const movie = e.target.value;
+    console.log(e.target);
+    
+    // const url = new URL(`${}`)
+    console.log(movie);
 
     fetch(url)
         .then(resp => resp.json())
         .then(data => {
-            Object.keys(data).forEach(movieObj => {
-                movieIDs = data.map(el => el.id);
-                url = new URL(`/${movieIDs[movieObj].id}`, BASE_URL);
-                movieTitle = data[movieObj].title;
+            MOVIE_INFO.removeAttribute("hidden");
+            console.log(MOVIE_INFO);
         })
-    }) 
+    
+    document.querySelector('#movieTitle').innerText = movie;
+
 }
 
 
