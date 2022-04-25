@@ -39,6 +39,10 @@ h1 {
     font-size: 48px;
 }
 
+h2 {
+    font-size: 85%;
+}
+
 #movieInfo {
     display: block;
     flex-wrap: wrap;

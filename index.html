@@ -8,30 +8,31 @@
     <title>Document</title>
 </head>
 <body>
-    <section id="sectionBG">
-        <h1>Ghibli Generator</h1>
-        <section>
-            <div>
-                <select name="movieList" id="movieList">
-        
-                </select>
-            </div>
-        
-            <div id="movieInfo" hidden>
-                <h1 id="movieTitle">Movie Title</h2>
-                    <h2>Released in<span id="releaseDate">####</span></h2>
-                    <h2>Directed by <span id="directorTitle">Director</span></h2>
-                    <div id="imgAndDesc">
-                        <img id="movieBanner" src="" alt="">
-                        <p id="description"></p>
-                    </div>
-            </div>
-            <div id="characterSection" hidden>
-                <ul id="charactersList">
+    <h1>Ghibli Generator</h1>
+    <section>
+        <div>
+            <select name="movieList" id="movieList">
+                <!-- use main.js to populate this dropdown menu with "options" -->
+            </select>
+        </div>
+    
+        <!-- movie information will remain hidden until the movie is selected from the list -->
+        <div id="movieInfo" hidden>
+            <h1 id="movieTitle">Movie Title</h2>
+                <h2>Released in <span id="releaseDate">####</span></h2>
+                <h2>Directed by <span id="directorTitle">Director</span></h2>
+                <h2>Original Title: <span id="OGTitle">Japanese Characters</span></h2>
+                <h2>Title Romanised: <span id="titleRomanised">Phonetics</span></h2>
+                <div id="imgAndDesc">
+                    <img id="movieBanner" src="" alt="">
+                    <p id="description"></p>
+                </div>
+        </div>
+        <div id="characterSection" hidden>
+            <ul id="charactersList">
 
-                </ul>
-            </div>
-        </section>
+            </ul>
+        </div>
     </section>
     <script src="/js/main.js"></script>
 </body>
