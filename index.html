@@ -8,32 +8,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ghibli Generator</h1>
-    <section>
-        <div>
-            <select name="movieList" id="movieList">
-                <!-- use main.js to populate this dropdown menu with "options" -->
-            </select>
+    <div class="mainContent">
+        <div class="banner">
+            <h1 class="movieTitle">Ghibli Generator</h1>
+            <div>
+                <select name="movieList" id="movieList">
+                    <!-- use main.js to populate this dropdown menu with "options" -->
+                </select>
+            </div>
         </div>
-    
-        <!-- movie information will remain hidden until the movie is selected from the list -->
-        <div id="movieInfo" hidden>
-            <h1 id="movieTitle">Movie Title</h2>
-                <h2>Released in <span id="releaseDate">####</span></h2>
-                <h2>Directed by <span id="directorTitle">Director</span></h2>
-                <h2>Original Title: <span id="OGTitle">Japanese Characters</span></h2>
-                <h2>Title Romanised: <span id="titleRomanised">Phonetics</span></h2>
-                <div id="imgAndDesc">
-                    <img id="movieBanner" src="" alt="">
-                    <p id="description"></p>
+        <section>
+            <section class="movieContainer">
+                <!-- movie information will remain hidden until the movie is selected from the list -->
+                <div id="movieInfo" hidden>
+                    <h1 id="movieTitle" class="movieTitle">Movie Title</h2>
+                        <h2 class="movieTitle">Released in <span id="releaseDate">####</span></h2>
+                        <h2 class="movieTitle">Directed by <span id="directorTitle">Director</span></h2>
+                        <h2 class="movieTitle">Original Title: <span id="OGTitle">Japanese Characters</span></h2>
+                        <h2 class="movieTitle">Title Romanised: <span id="titleRomanised">Phonetics</span></h2>
+                        <div id="imgAndDesc">
+                            <img id="movieBanner" src="" alt="">
+                            <p id="description"></p>
+                        </div>
                 </div>
-        </div>
-        <div id="characterSection" hidden>
-            <ul id="charactersList">
+            </section>
+            <div id="characterSection" hidden>
+                <h1 class="charactersTitle">Characters</h2>
+                <ul id="charactersList">
+    
+                </ul>
+            </div>
+        </section>
+    </div>
 
-            </ul>
-        </div>
-    </section>
     <script src="/js/main.js"></script>
 </body>
 </html>

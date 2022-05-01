@@ -28,8 +28,14 @@ body {
     font-size: 1.3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
-    /* background-image: url('/assets/images/brewery-cover.avif'); */
-    background: linear-gradient(hsla(190, 90%, 75%, 0.955), hsla(190, 90%, 35%, 0.955));
+    background-color: linear-gradient(#acdaff00, #0000008c);
+    /* z-index: 1;
+    filter: blur(3px);
+    -webkit-filter: blur(3px); */
+    /* background-image: url('/assets/images/brewery-cover.avif');
+    background: linear-gradient(hsla(190, 90%, 75%, 0.955), hsla(190, 90%, 35%, 0.955));*/
+    /* background: linear-gradient(hsla(190, 90%, 75%, 0.01), hsla(0, 0%, 0%, 1)); */
+
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -43,7 +49,47 @@ h2 {
     font-size: 85%;
 }
 
+/* .bodyBG {
+    position: relative;
+    z-index: 2;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    /* Full height 
+    height: 100%;
+    
+    /* Center and scale the image nicely 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+#characterSection {
+    margin: 75px;
+    width: 100%;
+    height: 30vh;
+}
+
+#charactersList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: none;
+    width: 100vw;
+}
+
+#charactersList li{
+    margin: 30px;
+}
+
+.movieTitle,
+.charactersTitle,
+#charactersList li {
+    color: white;
+    filter: drop-shadow(3px 3px 2px #000000e0);
+}
+
 #movieInfo {
+    filter: drop-shadow(3px 3px 2px #000000e0);
     display: block;
     flex-wrap: wrap;
 }
@@ -54,11 +100,26 @@ h2 {
     align-items: center;
 }
 
+#description {
+    font-weight: 400;
+}
+
 img,
 #description {
     width: 50%;
     padding: 10px;
     color: hsla(360, 2%, 96%, 1);
+}
+
+select {
+    outline: 0;
+    background-color: rgb(232, 248, 252);
+    border-radius: 10px;
+
+}
+
+#charactersList li {
+    list-style: none;
 }
 
 /* ************************** */
