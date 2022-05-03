@@ -98,6 +98,7 @@ img,
     width: 50%;
     padding: 10px;
     color: hsla(360, 2%, 96%, 1);
+    background-repeat: no-repeat;
 }
 
 
